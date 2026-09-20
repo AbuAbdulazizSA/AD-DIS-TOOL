@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AD DIS Tools</title>
 <style>
-
+ 
   :root{
     --bg:#f4f6f8;
     --card:#ffffff;
@@ -53,7 +53,7 @@
     --mono-text:#cfe0f5;
     --shadow: 0 1px 3px rgba(0,0,0,0.4);
   }
-
+ 
   *{box-sizing:border-box;}
   body{
     margin:0;
@@ -68,7 +68,7 @@
   header{margin-bottom:18px;}
   header h1{font-size:20px;margin:0 0 4px;display:flex;align-items:center;gap:8px;}
   header p{margin:0;color:var(--text-dim);font-size:13px;line-height:1.5;}
-
+ 
   .card{
     background:var(--card);
     border:1px solid var(--border);
@@ -85,12 +85,12 @@
     margin:0 0 12px;
     font-weight:700;
   }
-
+ 
   .row{display:flex;gap:10px;align-items:center;}
   .row + .row{margin-top:10px;}
-
+ 
   label{font-size:13px;color:var(--text-dim);display:block;margin-bottom:6px;}
-
+ 
   input[type=date], select, input[type=text], textarea{
     width:100%;
     background:var(--bg);
@@ -103,11 +103,11 @@
   }
   textarea{resize:vertical;min-height:38px;}
   input:focus, select:focus, textarea:focus{outline:2px solid var(--accent);outline-offset:1px;}
-
+ 
   .daynav{display:flex;gap:8px;align-items:center;}
   .daynav button{flex:0 0 auto;}
   .daynav input{flex:1;}
-
+ 
   .iconbtn{
     background:var(--accent-dim);
     color:var(--accent);
@@ -119,7 +119,7 @@
     display:flex;align-items:center;justify-content:center;
   }
   .iconbtn:active{transform:scale(0.94);}
-
+ 
   .shift-presets{
     display:flex;
     flex-wrap:wrap;
@@ -140,7 +140,7 @@
     border-color:var(--accent);
     color:#fff;
   }
-
+ 
   .counter-list{display:flex;flex-direction:column;gap:10px;}
   .counter-item{
     display:flex;
@@ -161,7 +161,7 @@
     font-weight:700;
     font-variant-numeric:tabular-nums;
   }
-
+ 
   .case-item{
     display:flex;
     gap:8px;
@@ -191,7 +191,7 @@
     cursor:pointer;
     margin-top:4px;
   }
-
+ 
   .preview-box{
     background:var(--mono-bg);
     color:var(--mono-text);
@@ -203,7 +203,7 @@
     white-space:pre-wrap;
     word-break:break-word;
   }
-
+ 
   .actions{display:flex;gap:10px;margin-top:12px;}
   .btn{
     flex:1;
@@ -218,7 +218,7 @@
   .btn-primary{background:var(--accent);color:#fff;}
   .btn-secondary{background:var(--card);color:var(--text);border:1px solid var(--border);}
   .btn:active{transform:scale(0.98);}
-
+ 
   .toast{
     position:fixed;
     left:50%;
@@ -236,10 +236,10 @@
     box-shadow:var(--shadow);
   }
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
-
+ 
   .footer-field label{margin-bottom:4px;}
   .hint{font-size:12px;color:var(--text-dim);margin-top:6px;}
-
+ 
   .auto-badge{
     display:inline-flex;
     align-items:center;
@@ -257,7 +257,7 @@
     background:var(--success);
     display:inline-block;
   }
-
+ 
   .template-row{
     display:flex;
     flex-wrap:wrap;
@@ -278,7 +278,7 @@
     gap:6px;
   }
   .template-chip:active{transform:scale(0.96);}
-
+ 
   .case-card{
     border:1px solid var(--border);
     border-radius:12px;
@@ -307,8 +307,8 @@
     line-height:1.5;
   }
   .case-card textarea{width:100%;}
-
-
+ 
+ 
   /* ---- shift-summary-only components ---- */
   .date-note{
     background:var(--accent-dim);
@@ -364,8 +364,8 @@
     border-color:var(--accent);
     color:#fff;
   }
-
-
+ 
+ 
   /* ---- per-tool accent theming ---- */
   #view-shift{ --accent:#0f6e7d; --accent-dim:#e5f2f3; }
   #view-smr{ --accent:#0d6efd; --accent-dim:#e8f0fe; }
@@ -375,7 +375,7 @@
   }
   #view-shift[data-theme="dark"], [data-theme="dark"] #view-shift{ --accent:#2ba7ba; --accent-dim:#16292c; }
   #view-smr[data-theme="dark"], [data-theme="dark"] #view-smr{ --accent:#4d94ff; --accent-dim:#1c2a3f; }
-
+ 
   /* ---- home / launcher screen ---- */
   .home-wrap{max-width:520px;margin:40px auto;padding:0 16px;}
   .home-header{text-align:center;margin-bottom:28px;}
@@ -416,7 +416,7 @@
   .tile-text .tile-title{font-size:16px;font-weight:700;margin-bottom:2px;color:var(--text);}
   .tile-text .tile-desc{font-size:12.5px;color:var(--text-dim);}
   .tile-arrow{margin-left:auto;color:var(--text-dim);font-size:18px;flex:0 0 auto;}
-
+ 
   .back-btn{
     display:inline-flex;
     align-items:center;
@@ -431,11 +431,11 @@
     margin-bottom:4px;
   }
   .back-btn:active{opacity:0.6;}
-
+ 
 </style>
 </head>
 <body>
-
+ 
 <div id="home">
   <div class="home-wrap">
     <div class="home-header">
@@ -463,16 +463,16 @@
     </div>
   </div>
 </div>
-
+ 
 <div id="view-shift" style="display:none">
 <button class="back-btn">‹ Back to tools</button>
-
+ 
 <div class="wrap">
   <header>
     <h1>📋 Shift Summary</h1>
     <p>Date and shift are set automatically. Tap the agents on shift, fill in the numbers, then copy the summary to the group.</p>
   </header>
-
+ 
   <div class="card">
     <h2>Date</h2>
     <div class="row daynav">
@@ -482,22 +482,22 @@
     </div>
     <div class="date-note" id="ss-dateNote"></div>
   </div>
-
+ 
   <div class="card">
     <h2>Shift</h2>
     <div class="shift-grid" id="ss-shiftGrid"></div>
   </div>
-
+ 
   <div class="card">
     <h2>Agents on Shift — tap to select</h2>
     <div class="agent-grid" id="ss-agentGrid"></div>
   </div>
-
+ 
   <div class="card">
     <h2>Shift Numbers</h2>
     <div class="counter-list" id="ss-counterList"></div>
   </div>
-
+ 
   <div class="card">
     <h2>Brief</h2>
     <div class="template-row" id="ss-templateRow"></div>
@@ -505,7 +505,7 @@
     <button class="add-case" id="ss-addCase">+ Add free note</button>
     <p class="hint">Tap a template, then just fill in the company name, reason or ticket number — the wording is written for you.</p>
   </div>
-
+ 
   <div class="card">
     <h2>Message Preview</h2>
     <div class="preview-box" id="ss-preview"></div>
@@ -515,9 +515,9 @@
     </div>
   </div>
 </div>
-
+ 
 <div class="toast" id="ss-toast">Message copied ✓</div>
-
+ 
 <script>
 (function(){
   const COUNTERS = [
@@ -528,13 +528,13 @@
     {key:'followups', label:'Follow-ups'},
     {key:'emails_received', label:'Emails Received'}
   ];
-
+ 
   const SHIFTS = [
     {key:'morning', name:'Morning', range:'07:00 AM – 04:00 PM'},
     {key:'evening', name:'Evening', range:'03:00 PM – 12:00 AM'},
     {key:'night',   name:'Night',   range:'11:00 PM – 08:00 AM'}
   ];
-
+ 
   const AGENTS = [
     'Mohammed Alabbas',
     'Mohammed Alshehri',
@@ -546,7 +546,7 @@
     'Hayder Albayibi',
     'Hussain Alqrous'
   ];
-
+ 
   const TEMPLATES = [
     {
       type:'email', icon:'📧', label:'Email',
@@ -581,12 +581,12 @@
       compose:f => `Follow up regarding: ${f.reason||''}`
     }
   ];
-
+ 
   const STORAGE_KEY = 'shift_summary_draft_v1';
-
+ 
   function pad(n){ return String(n).padStart(2,'0'); }
   function isoDate(d){ return d.getFullYear() + '-' + pad(d.getMonth()+1) + '-' + pad(d.getDate()); }
-
+ 
   // Decide current shift + the calendar date the shift belongs to.
   // Night runs 23:00 -> 08:00, so between 00:00-07:00 it still belongs to
   // the previous day's date (the day the shift started).
@@ -604,15 +604,13 @@
     }
     return {shiftKey, date: isoDate(d)};
   }
-
+ 
   function loadState(){
-    try{
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if(raw) return JSON.parse(raw);
-    }catch(e){ /* ignore, fall through to default */ }
+    // Caching disabled on purpose: every visit starts from a clean report
+    // instead of restoring a previously saved draft.
     return null;
   }
-
+ 
   function defaultState(){
     const counts = {};
     COUNTERS.forEach(c => counts[c.key] = 0);
@@ -625,7 +623,7 @@
       cases: []
     };
   }
-
+ 
   let state = loadState() || defaultState();
   if(!state.counts){ state.counts = defaultState().counts; }
   COUNTERS.forEach(c => { if(typeof state.counts[c.key] !== 'number') state.counts[c.key] = 0; });
@@ -640,28 +638,27 @@
   } else {
     state.cases = [];
   }
-
+ 
   // Auto-set date + shift to right now on every fresh page load.
   const auto = autoDetect(new Date());
   state.date = auto.date;
   state.shift = auto.shiftKey;
-
+ 
   function save(){
-    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
-    catch(e){ /* storage unavailable, continue without persistence */ }
+    // No-op: nothing is written to storage, so nothing is cached between visits.
   }
-
+ 
   function fmtDateDisplay(iso){
     const d = new Date(iso + 'T00:00:00');
     if(isNaN(d)) return iso;
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
   }
-
+ 
   // ---- Date nav ----
   const dateInput = document.getElementById('ss-reportDate');
   dateInput.addEventListener('change', () => { state.date = dateInput.value || isoDate(new Date()); save(); renderDateNote(); renderPreview(); });
-
+ 
   document.getElementById('ss-prevDay').addEventListener('click', () => {
     const d = new Date(state.date + 'T00:00:00');
     d.setDate(d.getDate() - 1);
@@ -676,7 +673,7 @@
     dateInput.value = state.date;
     save(); renderDateNote(); renderPreview();
   });
-
+ 
   function renderDateNote(){
     const note = document.getElementById('ss-dateNote');
     if(state.shift === 'night'){
@@ -685,7 +682,7 @@
       note.textContent = 'Date is set to ' + fmtDateDisplay(state.date) + ' — today. Use Prev/Next day to change it.';
     }
   }
-
+ 
   // ---- Shift cards ----
   const shiftGridEl = document.getElementById('ss-shiftGrid');
   function renderShifts(){
@@ -701,7 +698,7 @@
       shiftGridEl.appendChild(card);
     });
   }
-
+ 
   // ---- Agents ----
   const agentGridEl = document.getElementById('ss-agentGrid');
   function renderAgents(){
@@ -719,7 +716,7 @@
       agentGridEl.appendChild(chip);
     });
   }
-
+ 
   // ---- Counters ----
   const counterListEl = document.getElementById('ss-counterList');
   function renderCounters(){
@@ -751,7 +748,7 @@
     const el = counterListEl.querySelector(`[data-val="${key}"]`);
     if(el) el.textContent = state.counts[key];
   }
-
+ 
   // ---- Brief templates ----
   const templateRowEl = document.getElementById('ss-templateRow');
   function renderTemplates(){
@@ -775,7 +772,7 @@
       if(firstInput) firstInput.focus();
     }
   }
-
+ 
   // ---- Brief entries ----
   const caseListEl = document.getElementById('ss-caseList');
   function composeCase(c){
@@ -791,7 +788,7 @@
     state.cases.forEach((c, idx) => {
       const card = document.createElement('div');
       card.className = 'case-card';
-
+ 
       if(c.type === 'free'){
         card.innerHTML = `
           <div class="case-card-head">
@@ -835,7 +832,7 @@
         });
         updateCasePreviewLine(card, tpl, c);
       }
-
+ 
       card.querySelector('.case-remove').addEventListener('click', () => {
         state.cases.splice(idx,1);
         save(); renderCases(); renderPreview();
@@ -857,11 +854,11 @@
     const areas = caseListEl.querySelectorAll('textarea');
     if(areas.length) areas[areas.length-1].focus();
   });
-
+ 
   function escapeHtml(str){
     return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
   }
-
+ 
   // ---- Message assembly ----
   function buildMessage(){
     const lines = [];
@@ -885,12 +882,12 @@
     }
     return lines.join('\n');
   }
-
+ 
   const previewEl = document.getElementById('ss-preview');
   function renderPreview(){
     previewEl.textContent = buildMessage();
   }
-
+ 
   // ---- Copy / Share ----
   const toast = document.getElementById('ss-toast');
   function showToast(msg){
@@ -898,7 +895,7 @@
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1800);
   }
-
+ 
   document.getElementById('ss-copyBtn').addEventListener('click', async () => {
     const text = buildMessage();
     try{
@@ -916,13 +913,13 @@
       document.body.removeChild(ta);
     }
   });
-
+ 
   document.getElementById('ss-shareBtn').addEventListener('click', () => {
     const text = buildMessage();
     const url = 'https://wa.me/?text=' + encodeURIComponent(text);
     window.open(url, '_blank');
   });
-
+ 
   // ---- Initial render ----
   function render(){
     dateInput.value = state.date;
@@ -940,13 +937,13 @@
 </div>
 <div id="view-smr" style="display:none">
 <button class="back-btn">‹ Back to tools</button>
-
+ 
 <div class="wrap">
   <header>
     <h1>🛰️ Special Monitoring Report</h1>
     <p>Fill in the numbers and case notes, then copy or share the report to the group. A report is expected every 6 hours.</p>
   </header>
-
+ 
   <div class="card">
     <h2>Date &amp; Report Time</h2>
     <div class="row daynav">
@@ -964,12 +961,12 @@
       </div>
     </div>
   </div>
-
+ 
   <div class="card">
     <h2>Shift Numbers</h2>
     <div class="counter-list" id="counterList"></div>
   </div>
-
+ 
   <div class="card">
     <h2>Brief</h2>
     <div class="template-row" id="templateRow"></div>
@@ -977,13 +974,13 @@
     <button class="add-case" id="addCase">+ Add free note</button>
     <p class="hint">Tap a template, then just fill in the company name, reason or ticket number — the wording is written for you.</p>
   </div>
-
+ 
   <div class="card footer-field">
     <h2>Sign-off</h2>
     <label>Closing line</label>
     <input type="text" id="signoff" value="AD DIS Customer Support">
   </div>
-
+ 
   <div class="card">
     <h2>Message Preview</h2>
     <div class="preview-box" id="preview"></div>
@@ -993,9 +990,9 @@
     </div>
   </div>
 </div>
-
+ 
 <div class="toast" id="toast">Message copied ✓</div>
-
+ 
 <script>
 (function(){
   const COUNTERS = [
@@ -1006,14 +1003,14 @@
     {key:'followups', label:'Follow-ups'},
     {key:'emails_received', label:'Emails Received'}
   ];
-
+ 
   const PRESETS = [
     '02:00 AM – 08:00 AM',
     '08:00 AM – 02:00 PM',
     '02:00 PM – 08:00 PM',
     '08:00 PM – 02:00 AM'
   ];
-
+ 
   const TEMPLATES = [
     {
       type:'email', icon:'📧', label:'Email',
@@ -1048,9 +1045,9 @@
       compose:f => `Follow up regarding: ${f.reason||''}`
     }
   ];
-
+ 
   const STORAGE_KEY = 'smr_draft_v1';
-
+ 
   // Returns {index, label} for the 6-hour block the given Date falls into.
   // Blocks: 02-08, 08-14, 14-20, 20-02(wraps past midnight)
   function currentBlock(now){
@@ -1062,20 +1059,18 @@
     if(h >= 14 && h < 20) return {index:2, label:PRESETS[2]};
     return {index:3, label:PRESETS[3]}; // h>=20 or h<2
   }
-
+ 
   function todayStr(){
     const d = new Date();
     return d.toISOString().slice(0,10);
   }
-
+ 
   function loadState(){
-    try{
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if(raw) return JSON.parse(raw);
-    }catch(e){ /* ignore, fall through to default */ }
+    // Caching disabled on purpose: every visit starts from a clean report
+    // instead of restoring a previously saved draft.
     return null;
   }
-
+ 
   function defaultState(){
     const counts = {};
     COUNTERS.forEach(c => counts[c.key] = 0);
@@ -1087,7 +1082,7 @@
       signoff: 'AD DIS Customer Support'
     };
   }
-
+ 
   let state = loadState() || defaultState();
   // guard against malformed saved state
   if(!state.counts){ state.counts = defaultState().counts; }
@@ -1105,30 +1100,29 @@
   if(!state.date) state.date = todayStr();
   if(!state.reportTime) state.reportTime = PRESETS[1];
   if(typeof state.signoff !== 'string') state.signoff = 'AD DIS Customer Support';
-
+ 
   // Auto-set date + report time block to right now on every fresh page load,
   // so the report always opens pointing at the current shift block.
   const nowBlock = currentBlock(new Date());
   state.date = todayStr();
   state.reportTime = nowBlock.label;
-
+ 
   function save(){
-    try{ localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); }
-    catch(e){ /* storage unavailable, continue without persistence */ }
+    // No-op: nothing is written to storage, so nothing is cached between visits.
   }
-
+ 
   function fmtDateDisplay(iso){
     const d = new Date(iso + 'T00:00:00');
     if(isNaN(d)) return iso;
     const months = ['January','February','March','April','May','June','July','August','September','October','November','December'];
     return d.getDate() + ' ' + months[d.getMonth()] + ' ' + d.getFullYear();
   }
-
+ 
   // ---- Date nav ----
   const dateInput = document.getElementById('reportDate');
   dateInput.value = state.date;
   dateInput.addEventListener('change', () => { state.date = dateInput.value || todayStr(); save(); render(); });
-
+ 
   document.getElementById('prevDay').addEventListener('click', () => {
     const d = new Date(state.date + 'T00:00:00');
     d.setDate(d.getDate() - 1);
@@ -1143,7 +1137,7 @@
     dateInput.value = state.date;
     save(); render();
   });
-
+ 
   // ---- Report time presets ----
   const presetsEl = document.getElementById('presets');
   const reportTimeEl = document.getElementById('reportTime');
@@ -1163,7 +1157,7 @@
   }
   reportTimeEl.value = state.reportTime;
   reportTimeEl.addEventListener('input', () => { state.reportTime = reportTimeEl.value; save(); renderPresets(); renderPreview(); });
-
+ 
   // ---- Counters ----
   const counterListEl = document.getElementById('counterList');
   function renderCounters(){
@@ -1195,7 +1189,7 @@
     const el = counterListEl.querySelector(`[data-val="${key}"]`);
     if(el) el.textContent = state.counts[key];
   }
-
+ 
   // ---- Case templates ----
   const templateRowEl = document.getElementById('templateRow');
   function renderTemplates(){
@@ -1219,7 +1213,7 @@
       if(firstInput) firstInput.focus();
     }
   }
-
+ 
   // ---- Cases ----
   const caseListEl = document.getElementById('caseList');
   function composeCase(c){
@@ -1235,7 +1229,7 @@
     state.cases.forEach((c, idx) => {
       const card = document.createElement('div');
       card.className = 'case-card';
-
+ 
       if(c.type === 'free'){
         card.innerHTML = `
           <div class="case-card-head">
@@ -1279,7 +1273,7 @@
         });
         updateCasePreviewLine(card, tpl, c);
       }
-
+ 
       card.querySelector('.case-remove').addEventListener('click', () => {
         state.cases.splice(idx,1);
         save(); renderCases(); renderPreview();
@@ -1301,16 +1295,16 @@
     const areas = caseListEl.querySelectorAll('textarea');
     if(areas.length) areas[areas.length-1].focus();
   });
-
+ 
   function escapeHtml(str){
     return String(str).replace(/[&<>"']/g, s => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[s]));
   }
-
+ 
   // ---- Sign-off ----
   const signoffEl = document.getElementById('signoff');
   signoffEl.value = state.signoff;
   signoffEl.addEventListener('input', () => { state.signoff = signoffEl.value; save(); renderPreview(); });
-
+ 
   // ---- Message assembly ----
   function buildMessage(){
     const lines = [];
@@ -1334,12 +1328,12 @@
     lines.push('*' + (state.signoff || '') + '*');
     return lines.join('\n');
   }
-
+ 
   const previewEl = document.getElementById('preview');
   function renderPreview(){
     previewEl.textContent = buildMessage();
   }
-
+ 
   // ---- Copy / Share ----
   const toast = document.getElementById('toast');
   function showToast(msg){
@@ -1347,7 +1341,7 @@
     toast.classList.add('show');
     setTimeout(() => toast.classList.remove('show'), 1800);
   }
-
+ 
   document.getElementById('copyBtn').addEventListener('click', async () => {
     const text = buildMessage();
     try{
@@ -1366,13 +1360,13 @@
       document.body.removeChild(ta);
     }
   });
-
+ 
   document.getElementById('shareBtn').addEventListener('click', () => {
     const text = buildMessage();
     const url = 'https://wa.me/?text=' + encodeURIComponent(text);
     window.open(url, '_blank');
   });
-
+ 
   // ---- Initial render ----
   function renderAutoBadge(){
     const now = new Date();
@@ -1381,7 +1375,7 @@
     document.getElementById('autoBadgeText').textContent =
       'Auto-detected from current time (' + hh + ':' + mm + ')';
   }
-
+ 
   function render(){
     dateInput.value = state.date;
     reportTimeEl.value = state.reportTime;
@@ -1396,7 +1390,7 @@
 })();
 </script>
 </div>
-
+ 
 <script>
 (function(){
   function showView(id){
@@ -1412,6 +1406,7 @@
   });
 })();
 </script>
-
+ 
 </body>
 </html>
+ 
