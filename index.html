@@ -1054,7 +1054,9 @@
   // Returns {index, label} for the 6-hour block the given Date falls into.
   // Blocks: 02-08, 08-14, 14-20, 20-02(wraps past midnight)
   function currentBlock(now){
-    const h = now.getHours();
+    // Delay the switch to the next block by 1 hour past the real boundary,
+    // so the report doesn't flip the moment the clock hits 02:00/08:00/14:00/20:00.
+    const h = (now.getHours() - 1 + 24) % 24;
     if(h >= 2 && h < 8) return {index:0, label:PRESETS[0]};
     if(h >= 8 && h < 14) return {index:1, label:PRESETS[1]};
     if(h >= 14 && h < 20) return {index:2, label:PRESETS[2]};
