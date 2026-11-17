@@ -91,7 +91,7 @@
 
   label{font-size:13px;color:var(--text-dim);display:block;margin-bottom:6px;}
 
-  input[type=date], select, input[type=text], textarea{
+  input[type=date], input.counter-input, select, input[type=text], textarea{
     width:100%;
     background:var(--bg);
     border:1px solid var(--border);
@@ -387,6 +387,22 @@
     :root:not([data-theme="light"]) .app-tile.tile-de .tile-icon{background:#241d3a;}
   }
   :root[data-theme="dark"] .app-tile.tile-de .tile-icon{background:#241d3a;}
+
+  .counter-input{
+    width:110px !important;
+    text-align:center;
+    font-size:16px;
+    font-weight:700;
+    font-variant-numeric:tabular-nums;
+    padding:6px 4px !important;
+    -moz-appearance:textfield;
+    appearance:textfield;
+  }
+  .counter-input::-webkit-outer-spin-button,
+  .counter-input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+    margin:0;
+  }
 
   /* ---- home / launcher screen ---- */
   .home-wrap{max-width:520px;margin:40px auto;padding:0 16px;}
@@ -1434,17 +1450,13 @@
     <div class="counter-item">
       <div class="counter-label">Emails Received</div>
       <div class="counter-controls">
-        <button class="iconbtn" id="de-minus">−</button>
-        <div class="counter-val" id="de-total">0</div>
-        <button class="iconbtn" id="de-plus">+</button>
+        <input type="number" inputmode="numeric" min="0" class="counter-input" id="de-total" value="0">
       </div>
     </div>
     <div class="counter-item">
       <div class="counter-label">Emails Sent</div>
       <div class="counter-controls">
-        <button class="iconbtn" id="de-sminus">−</button>
-        <div class="counter-val" id="de-senders">0</div>
-        <button class="iconbtn" id="de-splus">+</button>
+        <input type="number" inputmode="numeric" min="0" class="counter-input" id="de-senders" value="0">
       </div>
     </div>
   </div>
@@ -1505,9 +1517,20 @@
     noteEl.textContent = 'Date is set to '+fmt(state.date)+' — report is handed over at 12:00 AM at the end of this day. Use ◀ ▶ to change it.';
   }
   function renderNumbers(){
-    totalEl.textContent = state.total;
-    sendersEl.textContent = state.senders;
+    totalEl.value = state.total;
+    sendersEl.value = state.senders;
   }
+  function typed(el, key){
+    el.addEventListener('input', function(){
+      var n = parseInt(el.value, 10);
+      state[key] = (isNaN(n) || n < 0) ? 0 : n;
+      renderPreview();
+    });
+    el.addEventListener('blur', function(){ el.value = state[key]; });
+    el.addEventListener('focus', function(){ el.select(); });
+  }
+  typed(totalEl, 'total');
+  typed(sendersEl, 'senders');
 
   function buildMessage(){
     return [
@@ -1527,10 +1550,6 @@
     toastEl.classList.add('show');
     setTimeout(function(){ toastEl.classList.remove('show'); }, 1800);
   }
-  function bump(key, n){
-    state[key] = Math.max(0, state[key]+n);
-    renderNumbers(); renderPreview();
-  }
 
   document.getElementById('de-prevDay').addEventListener('click', function(){ shiftDay(-1); });
   document.getElementById('de-nextDay').addEventListener('click', function(){ shiftDay(1); });
@@ -1538,10 +1557,6 @@
     state.date = dateEl.value || reportDay();
     renderDate(); renderPreview();
   });
-  document.getElementById('de-plus').addEventListener('click', function(){ bump('total',1); });
-  document.getElementById('de-minus').addEventListener('click', function(){ bump('total',-1); });
-  document.getElementById('de-splus').addEventListener('click', function(){ bump('senders',1); });
-  document.getElementById('de-sminus').addEventListener('click', function(){ bump('senders',-1); });
   document.getElementById('de-copy').addEventListener('click', function(){
     var text = buildMessage();
     function fallback(){
